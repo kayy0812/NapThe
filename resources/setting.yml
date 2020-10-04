@@ -16,13 +16,13 @@ amount-content: 'Mệnh giá: '
 
 # Viettel: {VIETTEL_STATUS}, Mobi: {MOBI_STATUS}, Vina: {VINA_STATUS}, Zing: {ZING_STATUS}, Gate: {GATE_STATUS}
 contents:
-  - ({PLAYER_NAME})
-  - VỊT THEO ({VIETTEL_STATUS})
-  - Best Hút 80%
-  - Pay to WIN!
-  - Yamateeee
-  - Itaiiiii
-  - Kimochiiiiiiiiiiiiii
+  - "Xin chào {PLAYER_NAME}"
+  - "- Tình trạng thẻ -"
+  - "Viettel: {VIETTEL_STATUS}"
+  - "Mobiphone: {MOBI_STATUS}"
+  - "Vinaphone: {VINA_STATUS}"
+  - "Zing: {ZING_STATUS}"
+  - "Gate: {GATE_STATUS}"
 #
 
 #Callback message
