@@ -59,7 +59,7 @@ class NapThe extends PluginBase
 		$json = file_get_contents('http://api.napthengay.com/Status.php');
 		$decode = json_decode($json, true);
 		foreach ($decode as $data) {
-			if ($data['status'] == $id) {
+			if ($data['id'] == $id) {
 				return ($data['status'] == 1) ? "Hoạt Động" : "Bảo Trì";
 			}
 		}
