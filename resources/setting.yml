@@ -1,0 +1,46 @@
+---
+# Napthengay.com information
+api-url: 'http://api.napthengay.com/v2/'
+merchant-id: '4512'
+email: 'levanloc8112@gmail.com'
+secure-code: ''
+#
+
+#Setting plugin UI
+title: 'PAY TO WIN'
+
+type-content: 'Nhà mạng: '
+seri-content: 'Nhập seri: '
+pin-content: 'Nhập pin: '
+amount-content: 'Mệnh giá: '
+
+# Viettel: {VIETTEL_STATUS}, Mobi: {MOBI_STATUS}, Vina: {VINA_STATUS}, Zing: {ZING_STATUS}, Gate: {GATE_STATUS}
+contents:
+  - ({PLAYER_NAME})
+  - VỊT THEO ({VIETTEL_STATUS})
+  - Best Hút 80%
+  - Pay to WIN!
+  - Yamateeee
+  - Itaiiiii
+  - Kimochiiiiiiiiiiiiii
+#
+
+#Callback message
+accept_callback: "Nạp thành công {TYPE} {AMOUNT}"
+deny_callback: "Lỗi: {REASON} {CODE}"
+error_host_callback: "Lỗi: {CODE} Không thể kết nối tới máy chủ"
+#
+
+#Give point
+amount_callback:
+  10000: 10
+  20000: 25
+  50000: 50
+  100000: 100
+  200000: 200
+  500000: 500
+  1000000: 1000
+#Multip point
+# default = 1, you shouldn't set 0. 
+multip: 1  
+...
