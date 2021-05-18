@@ -1,34 +1,42 @@
 ---
 # Napthengay.com information
-api-url: 'http://api.napthengay.com/v2/'
-merchant-id: '4512'
-email: 'levanloc8112@gmail.com'
-secure-code: ''
+api_url: 'http://api.napthengay.com/v2/'
+merchant_id: ''
+mail: ''
+secure_code: ''
 #
 
 #Setting plugin UI
-title: 'PAY TO WIN'
+title: 'FGPAY'
 
-type-content: 'Nhà mạng: '
-seri-content: 'Nhập seri: '
-pin-content: 'Nhập pin: '
-amount-content: 'Mệnh giá: '
+type_content: 'Nhà mạng: '
+seri_content: 'Nhập seri: '
+pin_content: 'Nhập pin: '
+amount_content: 'Mệnh giá: '
 
-# Viettel: {VIETTEL_STATUS}, Mobi: {MOBI_STATUS}, Vina: {VINA_STATUS}, Zing: {ZING_STATUS}, Gate: {GATE_STATUS}
+# Viettel: {1}
+# Mobi: {2}
+# Vina: {3}
+# Zing: {4}
+# Gate: {5}
+# VCoin: {6}
+# Garena: {7}
 contents:
-  - "Xin chào {PLAYER_NAME}"
+  - "Xin chào {PLAYER}"
   - "- Tình trạng thẻ -"
-  - "Viettel: {VIETTEL_STATUS}"
-  - "Mobiphone: {MOBI_STATUS}"
-  - "Vinaphone: {VINA_STATUS}"
-  - "Zing: {ZING_STATUS}"
-  - "Gate: {GATE_STATUS}"
+  - "Viettel: {1}"
+  - "Mobiphone: {2}"
+  - "Vinaphone: {3}"
+  - "Zing: {4}"
+  - "Gate: {5}"
+  - "VCoin: {6}"
+  - "Garena: {7}"
 #
 
 #Callback message
-accept_callback: "Nạp thành công {TYPE} {AMOUNT}"
-deny_callback: "Lỗi: {REASON} {CODE}"
-error_host_callback: "Lỗi: {CODE} Không thể kết nối tới máy chủ"
+accept_callback: "Nạp thành công {TYPE} với mệnh giá {AMOUNT}"
+deny_callback: "{REASON} | Code: {CODE}"
+error_host_callback: "Không thể kết nối tới máy chủ | Code: {CODE}"
 #
 
 #Give point
