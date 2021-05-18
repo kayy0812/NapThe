@@ -14,15 +14,15 @@ use KaYuuVN\NapThe\Commands\NapTheCommand;
 class NapThe extends PluginBase {
 	public $config = [];
 	public $dropdown_list_name = [];
-    public $dropdown_list_amount = [
-    	"10000",
-    	"20000",
-    	"50000",
-    	"100000",
-    	"200000",
-    	"500000",
-    	"1000000"
-    ];
+        public $dropdown_list_amount = [
+    	    "10000",
+    	    "20000",
+    	    "50000",
+    	    "100000",
+    	    "200000",
+    	    "500000",
+    	    "1000000"
+        ];
 
 	public function onEnable(): void {
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
