@@ -8,16 +8,15 @@ use pocketmine\command\{
 };
 use pocketmine\Player;
 use KaYuuVN\NapThe\{
-	NapThe,
-	Form
+    NapThe,
+    Form
 };
 
 /**
  * Class NapTheCommand
  * @package KaYuuVN\NapThe\Commands
  */
-Class NapTheCommand extends PluginCommand
-{
+class NapTheCommand extends PluginCommand {
     
     /**
     * NapTheCommand constructor.
@@ -37,8 +36,7 @@ Class NapTheCommand extends PluginCommand
     *
     * @return bool
     */
-    public function execute(CommandSender $sender, string $commandLabel, array $args): bool
-    {
+    public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
         if($sender instanceof Player) {
             $form = new Form($this->plugin, $sender->getPlayer());
             $form->sendMenu();
