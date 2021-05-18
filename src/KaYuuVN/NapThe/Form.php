@@ -11,9 +11,8 @@ use jojoe77777\FormAPI\{
     ModalForm
 };
 
-Class Form
-{
-	private $plugin;
+Class Form {
+    private $plugin;
     private $content;
 
 	/**
@@ -21,14 +20,12 @@ Class Form
      * @param NapThe $plugin
      */
 
-	public function __construct(NapThe $plugin, Player $player)
-    {
+    public function __construct(NapThe $plugin, Player $player) {
         $this->plugin = $plugin;
         $this->player = $player;
     }
 
-    public function sendMenu()
-    {
+    public function sendMenu() {
         $form = new SimpleForm(function(Player $player, $data) {
             if ($data === null) {
                 return true;
@@ -45,36 +42,33 @@ Class Form
 
     }
 
-    public function Contents()
-    {
+    public function Contents() {
+        $lists = array();
         foreach ($this->plugin->config->get('contents') as $line) {
             $this->content .= $line."\n";
         }
-        return $this->plugin->Replace($this->content, [
-        	"PLAYER_NAME" => $this->player->getName(),
-        	"VIETTEL_STATUS" => $this->plugin->CallStatus(1),
-        	"MOBI_STATUS" => $this->plugin->CallStatus(2),
-        	"VINA_STATUS" => $this->plugin->CallStatus(3),
-        	"ZING_STATUS" => $this->plugin->CallStatus(4),
-        	"GATE_STATUS" => $this->plugin->CallStatus(5)
-        ]);
+        foreach ($this->plugin->dropdown_list_name as $id => $val) {
+            $lists[$id] = $this->plugin->Status($id);  
+        }
+        $lists['PLAYER'] = $this->player->getName();
+        var_dump($lists);
+        return $this->plugin->Replace($this->content, $lists);
     }
 
-    public function NapThe($message = "")
-    {
+    public function NapThe($message = "") {
         $form = new CustomForm(function(Player $player, $data) {
             if ($data === null) {
                 return true;
             }
             $server = new NapTheNgay($this->plugin, $player, $data[1] + 1, $data[2], $data[3], $this->plugin->dropdown_list_amount[$data[4]]);
-            return $server->CallToHost();
+            return $server->send();
         });
         $form->setTitle($this->player->getName());
         $form->addLabel($message);
-        $form->addDropdown($this->plugin->config->get('type-content'), $this->plugin->dropdown_list_type);
-        $form->addInput($this->plugin->config->get('seri-content'));
-        $form->addInput($this->plugin->config->get('pin-content'));
-        $form->addDropdown($this->plugin->config->get('amount-content'), $this->plugin->dropdown_list_amount);
+        $form->addDropdown($this->plugin->config->get('type_content'), array_values($this->plugin->dropdown_list_name));
+        $form->addInput($this->plugin->config->get('seri_content'));
+        $form->addInput($this->plugin->config->get('pin_content'));
+        $form->addDropdown($this->plugin->config->get('amount_content'), $this->plugin->dropdown_list_amount);
         $this->player->sendForm($form);
     }
 }
